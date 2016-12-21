@@ -3,7 +3,7 @@
 
 ### demo 运行步骤
 
-* 1、运行模拟业务后端：`check demo`，运行方法见`register-protection-check-demo`目录
+* 1、运行模拟业务后端：`check demo`，运行方法见`login-protection-check-demo`目录
 * 2、修改 `ViewController.m` 的 `viewDidAppear:`，填入您的 bussinessId，如下：
 
 		- (void)viewDidAppear:(BOOL)animated {
@@ -14,7 +14,7 @@
 
 		NSURL *url = [NSURL URLWithString:@"http://localhost:8182/login.do"];
 		// 例如，替换如下：
-		NSURL *url = [NSURL URLWithString:@"http://10.240.132.43:8183/login.do"];
+		NSURL *url = [NSURL URLWithString:@"http://10.240.132.43:8182/login.do"];
 		
 至此，配置和修改完成，编译运行即可。
 
