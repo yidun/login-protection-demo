@@ -17,7 +17,7 @@ check端即 接入方业务后台，该demo仅提供login.do接口，需要结�
     /** 业务ID，易盾根据产品业务特点分配 */
     private static final String BUSINESS_ID = "YOUR_BUSINESS_ID";
 
-``
+```
 
 
 * 运行demo
