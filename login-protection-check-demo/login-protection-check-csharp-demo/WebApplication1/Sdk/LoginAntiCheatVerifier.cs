@@ -35,10 +35,9 @@ namespace LoginAntiCheatAPIDemo.Sdk
         }
         
         /// <summary>
-        /// 向易盾验证码后台发起二次校验请求
+        /// check函数封装
         /// </summary>
-        /// <param name="validate">二次校验请求字符串</param>
-        /// <param name="user">当前用户信息，可以为空字符串</param>
+        /// <param name="token">sdk传递的token</param>
         /// <returns></returns>
         public VerifyResultType verify(string token)
         {
@@ -76,7 +75,7 @@ namespace LoginAntiCheatAPIDemo.Sdk
         }
 
         /// <summary>
-        /// 解析二次校验接口返回的结果
+        /// 解析check返回的结果
         /// </summary>
         /// <param name="response"></param>
         /// <returns></returns>
@@ -120,7 +119,7 @@ namespace LoginAntiCheatAPIDemo.Sdk
     }
 
     /// <summary>
-    /// 易盾验证码密钥对
+    /// 业务密钥对
     /// </summary>
     public class NESecretPair
     {
