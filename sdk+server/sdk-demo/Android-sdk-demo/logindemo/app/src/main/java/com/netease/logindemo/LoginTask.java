@@ -28,7 +28,7 @@ public class LoginTask extends AsyncTask<String, Void, String> {
     protected String doInBackground(String... strings) {
         String username = strings[0];
         String psd = strings[1];
-        String token = watchman.getToken( OnlineRegisterBusinessId,new RequestCallback(){
+        String token = watchman.getToken( "your BusinessId",new RequestCallback(){
             @Override
             public void onResult(int code, String msg) {
                 Log.e(TAG,"Register, code = " + code + " msg = " + msg);
