@@ -15,7 +15,7 @@ public class LoginActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        watchman.init(mContext, "your productNumber",new RequestCallback(){
+        watchman.init(getApplicationContext(), "your productNumber",new RequestCallback(){
             @Override
             public void onResult(int code, String msg) {
                 Log.e(TAG,"init,code = " + code + " msg = " + msg);
