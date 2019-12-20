@@ -5,7 +5,7 @@ import android.os.AsyncTask;
 import android.widget.Toast;
 
 import com.netease.mobsec.rjsb.watchman;
-
+import com.netease.mobsec.rjsb.RequestCallback;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,7 +19,7 @@ import java.util.Map;
 
 public class LoginTask extends AsyncTask<String, Void, String> {
     private Context mContext;
-
+    public static String TAG= "Login-getToken";
     public LoginTask(Context context) {
         this.mContext = context;
     }
@@ -28,10 +28,16 @@ public class LoginTask extends AsyncTask<String, Void, String> {
     protected String doInBackground(String... strings) {
         String username = strings[0];
         String psd = strings[1];
+        String token = watchman.getToken( OnlineRegisterBusinessId,new RequestCallback(){
+            @Override
+            public void onResult(int code, String msg) {
+                Log.e(TAG,"Register, code = " + code + " msg = " + msg);
+            }
+        });
         Map<String, String> params = new HashMap<String, String>();
         params.put("username", username);
         params.put("password", psd);
-        params.put("token", watchman.getToken("your BusinessId"));
+        params.put("token", token);
         return PostData(params);
     }
 
